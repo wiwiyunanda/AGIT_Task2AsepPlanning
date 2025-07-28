@@ -1,0 +1,34 @@
+@model Task2AsepPlanning.Models.Planning
+
+@{
+    ViewData["Title"] = "Hasil Planning Produksi";
+}
+
+<h2>Hasil Planning Produksi</h2>
+
+@if (Model == null)
+{
+    <p>Belum ada data perencanaan. Silakan input terlebih dahulu melalui menu <strong>Create</strong>.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Hari</th>
+                <th>Input</th>
+                <th>Output (Rencana)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Senin</td><td>@Model.Senin</td><td>@Model.SeninResult</td></tr>
+            <tr><td>Selasa</td><td>@Model.Selasa</td><td>@Model.SelasaResult</td></tr>
+            <tr><td>Rabu</td><td>@Model.Rabu</td><td>@Model.RabuResult</td></tr>
+            <tr><td>Kamis</td><td>@Model.Kamis</td><td>@Model.KamisResult</td></tr>
+            <tr><td>Jumat</td><td>@Model.Jumat</td><td>@Model.JumatResult</td></tr>
+            <tr><td>Sabtu</td><td>@Model.Sabtu</td><td>@Model.SabtuResult</td></tr>
+            <tr><td>Minggu</td><td>@Model.Minggu</td><td>@Model.MingguResult</td></tr>
+
+        </tbody>
+    </table>
+}

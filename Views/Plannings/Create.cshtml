@@ -1,0 +1,73 @@
+@model Task2AsepPlanning.Models.Planning
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Planning</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Input untuk 7 hari -->
+            <div class="form-group">
+                <label asp-for="Senin"></label>
+                <input asp-for="Senin" class="form-control" />
+                <span asp-validation-for="Senin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Selasa"></label>
+                <input asp-for="Selasa" class="form-control" />
+                <span asp-validation-for="Selasa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rabu"></label>
+                <input asp-for="Rabu" class="form-control" />
+                <span asp-validation-for="Rabu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kamis"></label>
+                <input asp-for="Kamis" class="form-control" />
+                <span asp-validation-for="Kamis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jumat"></label>
+                <input asp-for="Jumat" class="form-control" />
+                <span asp-validation-for="Jumat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sabtu"></label>
+                <input asp-for="Sabtu" class="form-control" />
+                <span asp-validation-for="Sabtu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Minggu"></label>
+                <input asp-for="Minggu" class="form-control" />
+                <span asp-validation-for="Minggu" class="text-danger"></span>
+            </div>
+
+            <!-- Hidden fields for Results -->
+            <input type="hidden" asp-for="SeninResult" />
+            <input type="hidden" asp-for="SelasaResult" />
+            <input type="hidden" asp-for="RabuResult" />
+            <input type="hidden" asp-for="KamisResult" />
+            <input type="hidden" asp-for="JumatResult" />
+            <input type="hidden" asp-for="SabtuResult" />
+            <input type="hidden" asp-for="MingguResult" />
+            <input type="hidden" asp-for="CreatedAt" />
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create Planning" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
